@@ -1,60 +1,87 @@
-var questionPromptContainer = $("#questionPrompt")
-​
-var questionChoicesContainer = $("#questionChoices")
-​
-var questions = [
-    {
-        question: "Is the sky blue?",
-        choices: ["Yes", "No"],
-        answerIndex: 0
-    }, {}, {}
-]
-​
-var currentQuestionIndex = 0
-​
-function handleStartingGame() {
-    // Start timer
+// adhoc variable list
+
+var highScoreElement = document.getElementById('#highScore');
+var start = ocument.getElementById(""); 
+
+var startTime = 90;
+var timerInterval = -1;
+
+// need to verify if this array layout works
+// var questionList =[
+//     {
+//         question: ""
+//         answerA: ""
+//         answerB: ""
+//         answerC: ""
+//         answerD: ""
+//         correctChoice: ""
+//     }
+// ]
+
+
+function displayQuestion() {
+    var question = currentQuestion
     
-    // Hide start page
-    
-    // Show main game page
-    
-    // Show current question
-    showCurrentQuestion()
 }
-​
-function handleEndingGame() {
-    // Hide main game view
+
+
+// var questionPromptContainer = $("#questionPrompt")
+// ​
+// var questionChoicesContainer = $("#questionChoices")
+// ​
+// var questions = [
+//     {
+//         question: "Is the sky blue?",
+//         choices: ["Yes", "No"],
+//         answerIndex: 0
+//     }, {}, {}
+// ]
+// ​
+// var currentQuestionIndex = 0
+// ​
+// function handleStartingGame() {
+//     // Start timer
     
-    // Show high score input view
-}
-​
-function showCurrentQuestion() {
-    var currentQ = questions[currentQuestionIndex]
+//     // Hide start page
     
-    if(currentQ == null) {
-        handleEndingGame()
-        return;
-    }
+//     // Show main game page
     
-    questionPromptContainer.empty()
+//     // Show current question
+//     showCurrentQuestion()
+// }
+// ​
+// function handleEndingGame() {
+//     // Hide main game view
     
-    questionPromptContainer.text(currentQ.question)
+//     // Show high score input view
+// }
+// ​
+// function showCurrentQuestion() {
+//     var currentQ = questions[currentQuestionIndex]
     
-    questionChoicesContainer.empty()
+//     if(currentQ == null) {
+//         handleEndingGame()
+//         return;
+//     }
     
-    currentQ.choices.forEach(function(choice) {
-        questionChoicesContainer.append($("<button>" + choice + "</button>"))
-    })
-}
-​
-$(".answer-button").on('click', function() {
-    // Check if the answer is correct or incorrect
+//     questionPromptContainer.empty()
     
-    // Show the user somehow (CSS classes)
+//     questionPromptContainer.text(currentQ.question)
     
-    // Increment Question Index
-    currentQuestionIndex++
+//     questionChoicesContainer.empty()
+    
+//     currentQ.choices.forEach(function(choice) {
+//         questionChoicesContainer.append($("<button>" + choice + "</button>"))
+//     })
+// }
+// ​
+// $(".answer-button").on('click', function() {
+//     // Check if the answer is correct or incorrect
+    
+//     // Show the user somehow (CSS classes)
+    
+//     // Increment Question Index
+//     currentQuestionIndex++
  
-    // Show user the current question
-    showCurrentQuestion()
+//     // Show user the current question
+//     showCurrentQuestion()
