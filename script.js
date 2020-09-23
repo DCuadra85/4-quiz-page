@@ -1,35 +1,43 @@
 // variable list
 
 var highScoreElement = document.getElementById('#highScore');
-var start = ocument.getElementById(""); 
+var start = document.getElementById("start");
+var  
 
 var startTime = 90;
 var timerInterval = -1;
 
 //define quiz q/a
-// var questionList = [
-//     {
-//         quizQuestion: "I need a question?"
-//         answerA: "a1"
-//         answerB: "a2"
-//         answerC: "a3"
-//         answerD: "a4"
-//         correctChoice: "B"
-//     },
-//     {
-//         quizQuestion: "another question"
-//         answerA: "a1"
-//         answerB: "a2"
-//         answerC: "a3"
-//         answerD: "a4"
-//         correctChoice: "D"
-//     }
-// ];
+var questionList = [
+    {
+        quizQuestion: "I need a question?",
+        answerA: "a1",
+        answerB: "a2",
+        answerC: "a3",
+        answerD: "a4",
+        correctChoice: "B",
+    },
+    {
+        quizQuestion: "another question",
+        answerA: "a1",
+        answerB: "a2",
+        answerC: "a3",
+        answerD: "a4",
+        correctChoice: "D",
+    }
+];
 
+var answerA = document.getElementById()
+var answerB = document.getElementById()
+var answerC = document.getElementById()
+var answerD = document.getElementById()
+
+var currentQuestionIndex = 0;
+var lastQuestionIndex = questionList.length-1;
 
 // quiz sequence
 function displayQuestion() {
-    var question = currentQuestion[questionIndex]
+    var question = currentQuestion[currentQuestionIndex]
 
     question.textContext = question.quizQuestion
     answerA.textContext = question.answerA
@@ -56,11 +64,22 @@ function quizTimer(){;
     }, 1000);
 }
 
+function checkAnswer(answer) {
+    if (answer === questions[currentQI].correct){
+      correct.style.display="block";
+      setTimeout(function () {
+        correct.style.display='none';
+      }, 1000);
+
 function yourScore(){
     clearInterval(timerInterval);
     timerInterval = -1;
     var timeScore = timeRemaining;
-    
+    document.finalScore.innerHTML= "Your final score is: " + endScore
+    timerEl.innerHTML="Timer: 0"
+    quiz.style.display="none";
+    recScore.style.display="block";
+
 }
 
 // function storeScore(){
