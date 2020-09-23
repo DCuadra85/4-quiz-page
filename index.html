@@ -33,6 +33,7 @@
                         <button type="button" class="btn btn-primary btnSpace" id=btnStart onclick="clickAnswer">C: </button>
                         <button type="button" class="btn btn-primary btnSpace" id=btnStart onclick="clickAnswer">D: </button>
                     </div>
+
               <div id="result">
                     <div id="correct" style="display: none">
                     <br>
@@ -47,6 +48,32 @@
 
             </div>
 
+
+        <div id="recordScore" style="display:none;">
+                <h1>All done!</h1>
+                <h3 style="margin-bottom: 50px;" id="endingScore"></h3>                      
+                    <div class="scores">
+                        <form id="score-form" method="POST">
+                          <label for="score-text"><h4>Enter Initials:</h4></label>
+                          <input type="text" placeholder="ex. AE" name="score-text" id="score-text" />
+                          <button type="button" class="btn btn-primary mb-2" onclick="yourScore()">Submit</button>
+                        </form>
+                      </div>
+
+            </div>
+
+
+            <div id="highScore" style="display:none;">
+                <h1>High Score:</h1>
+                <ul id="score-list"></ul>
+                <button type="submit" class="btn btn-primary mr-2" onclick="restartQuiz()">Try Again</button>
+                <button type="submit" class="btn btn-primary" onclick="clearScore()">Clear High Scores</button>
+            </div>
+
+        </div>
+    
+        </div>
+        </div> 
 
 <!-- need to rotate, use JS to change style value? -->
             <div id="endScore" style="display: none">
