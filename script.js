@@ -1,28 +1,31 @@
 // variable list
 
 var highScoreElement = document.getElementById('#highScore');
-var start = document.getElementById("start");
+var startBtn = document.getElementById("#btnStart");
 var  
 
 var startTime = 90;
 var timerInterval = -1;
 
+var correctDisplay = document.getElementById("#correctBar")
+var incorrectDisplay = document.getElementById("#wrongBar")
+
 //define quiz q/a
 var questionList = [
     {
-        quizQuestion: "I need a question?",
-        answerA: "a1",
-        answerB: "a2",
-        answerC: "a3",
-        answerD: "a4",
+        quizQuestion: "Who becomes king in Final Fantasy Tactics?",
+        answerA: "Ramza",
+        answerB: "Delita",
+        answerC: "Agrias",
+        answerD: "Orlandeau",
         correctChoice: "B",
     },
     {
-        quizQuestion: "another question",
-        answerA: "a1",
-        answerB: "a2",
-        answerC: "a3",
-        answerD: "a4",
+        quizQuestion: "The story of Final Fantasy Tactics is based on what?",
+        answerA: "Ivalice",
+        answerB: "The Zodiac Stones",
+        answerC: "The War of Lions",
+        answerD: "The Zodiac Braves",
         correctChoice: "D",
     }
 ];
@@ -47,7 +50,14 @@ function displayQuestion() {
 
 }
 
+startBtn.addEventListener("click", quizStart());
 
+function quizStart(){
+    start.style.display="none";
+    quiz.style.display="block";
+    showQuestion();
+    quizTimer();
+}
 
 function quizTimer(){;
     var timerInterval = setInterval(function(){
@@ -57,7 +67,7 @@ function quizTimer(){;
                 timeElement.textContext = "Time: 0";
             }
             else{
-                timeElement.textContext = "Time: " + timeRemaining
+                timeElement.textContext = "Time: " + timeRemaining;
             }
             timeRemaining-=1;
         }
@@ -65,7 +75,7 @@ function quizTimer(){;
 }
 
 function checkAnswer(answer) {
-    if (answer === questions[currentQI].correct){
+    if (answer === question[currentQuestionIndex].correct){
       correct.style.display="block";
       setTimeout(function () {
         correct.style.display='none';
