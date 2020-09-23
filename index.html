@@ -24,7 +24,8 @@
 
                 <!-- consider putting grid system or buttons for selections and hook JS into it -->
 
-            <div id="quiz" style="display:none">
+                <!-- need to rotate, use JS to change style value? -->
+            <div id="quiz" style="display: none">
                 <h1 id="question"></h1>
                     <div id="choices">
                         <button type="button" class="btn btn-primary btnSpace" id=btnStart onclick="clickAnswer">A: </button>
@@ -32,13 +33,23 @@
                         <button type="button" class="btn btn-primary btnSpace" id=btnStart onclick="clickAnswer">C: </button>
                         <button type="button" class="btn btn-primary btnSpace" id=btnStart onclick="clickAnswer">D: </button>
                     </div>
-              
+              <div id="result">
+                    <div id="correct" style="display: none">
+                    <br>
+                    <p style="color: green">Correct</p>
+                    </div>
+
+                    <div id="incorrect" style="display: none">
+                    <br>
+                    <p style="color: red">Incorrect</p>
+                    </div>
+              </div>
 
             </div>
 
 
-<!-- need to hide / rotate -->
-            <div id="endScore" style="display:none">
+<!-- need to rotate, use JS to change style value? -->
+            <div id="endScore" style="display: none">
                 <h1>Good Job!</h1>
                     <div class="scores">
                         <form id="score-record" method="POST">
