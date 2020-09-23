@@ -40,19 +40,32 @@ function displayQuestion() {
 }
 
 
-// online clock example, need to tie this in at some point.
+
 function quizTimer(){;
     var timerInterval = setInterval(function(){
         for (i = 0; i < timeRemaining; i++) {
             if(timeRemaining <= 0){
                 clearInterval(timerInterval);
+                timeElement.textContext = "Time: 0";
+            }
+            else{
                 timeElement.textContext = "Time: " + timeRemaining
             }
+            timeRemaining-=1;
         }
-        
     }, 1000);
 }
 
+function yourScore(){
+    clearInterval(timerInterval);
+    timerInterval = -1;
+    var timeScore = timeRemaining;
+    
+}
+
+// function storeScore(){
+
+// }
 
 // var questionPromptContainer = $("#questionPrompt")
 // ​
