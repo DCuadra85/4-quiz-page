@@ -41,16 +41,17 @@ function displayQuestion() {
 
 
 // online clock example, need to tie this in at some point.
-// function timer(){
-//     var sec = 30;
-//     var timer = setInterval(function(){
-//         document.getElementById('safeTimerDisplay').innerHTML='00:'+sec;
-//         sec--;
-//         if (sec < 0) {
-//             clearInterval(timer);
-//         }
-//     }, 1000);
-// }
+function quizTimer(){;
+    var timerInterval = setInterval(function(){
+        for (i = 0; i < timeRemaining; i++) {
+            if(timeRemaining <= 0){
+                clearInterval(timerInterval);
+                timeElement.textContext = "Time: " + timeRemaining
+            }
+        }
+        
+    }, 1000);
+}
 
 
 // var questionPromptContainer = $("#questionPrompt")
