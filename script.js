@@ -1,4 +1,4 @@
-// adhoc variable list
+// variable list
 
 var highScoreElement = document.getElementById('#highScore');
 var start = ocument.getElementById(""); 
@@ -6,29 +6,51 @@ var start = ocument.getElementById("");
 var startTime = 90;
 var timerInterval = -1;
 
-// need to verify if this array layout works
-// var questionList =[
+//define quiz q/a
+// var questionList = [
 //     {
-//         question: ""
-//         answerA: ""
-//         answerB: ""
-//         answerC: ""
-//         answerD: ""
-//         correctChoice: ""
+//         quizQuestion: "I need a question?"
+//         answerA: "a1"
+//         answerB: "a2"
+//         answerC: "a3"
+//         answerD: "a4"
+//         correctChoice: "B"
 //     },
+//     {
+//         quizQuestion: "another question"
+//         answerA: "a1"
+//         answerB: "a2"
+//         answerC: "a3"
+//         answerD: "a4"
+//         correctChoice: "D"
+//     }
+// ];
 
-// ]
 
-
-
+// quiz sequence
 function displayQuestion() {
     var question = currentQuestion[questionIndex]
 
-    question.textContext = question
-    answerA.textContext = answerA
+    question.textContext = question.quizQuestion
+    answerA.textContext = question.answerA
     answerB.textContext = question.answerB
+    answerC.textContext = question.answerC
+    answerD.textContext = question.answerD
 
 }
+
+
+// online clock example, need to tie this in at some point.
+// function timer(){
+//     var sec = 30;
+//     var timer = setInterval(function(){
+//         document.getElementById('safeTimerDisplay').innerHTML='00:'+sec;
+//         sec--;
+//         if (sec < 0) {
+//             clearInterval(timer);
+//         }
+//     }, 1000);
+// }
 
 
 // var questionPromptContainer = $("#questionPrompt")
