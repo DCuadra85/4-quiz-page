@@ -15,13 +15,19 @@ var timerInterval = -1;
 //         answerC: ""
 //         answerD: ""
 //         correctChoice: ""
-//     }
+//     },
+
 // ]
 
 
+
 function displayQuestion() {
-    var question = currentQuestion
-    
+    var question = currentQuestion[questionIndex]
+
+    question.textContext = question
+    answerA.textContext = answerA
+    answerB.textContext = question.answerB
+
 }
 
 
