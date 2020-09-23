@@ -27,10 +27,10 @@ var questionList = [
     }
 ];
 
-var answerA = document.getElementById()
-var answerB = document.getElementById()
-var answerC = document.getElementById()
-var answerD = document.getElementById()
+var answerA = document.getElementById("#btnA")
+var answerB = document.getElementById("#btnB")
+var answerC = document.getElementById("#btnC")
+var answerD = document.getElementById("#btnD")
 
 var currentQuestionIndex = 0;
 var lastQuestionIndex = questionList.length-1;
