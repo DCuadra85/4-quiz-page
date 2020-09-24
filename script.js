@@ -1,8 +1,8 @@
 // variable list
 
 var highScoreElement = document.getElementById('#highScore');
-var startBtn = document.getElementById("#btnStart");
-
+var startBtn = document.getElementById("btnStart");
+var start = document.getElementById("#startpage")
 var startTime = 90;
 var timerInterval = -1;
 
@@ -40,27 +40,26 @@ var questionList = [
 
 
 // quiz sequence
-
-
-startBtn.addEventListener("click", quizStart());
-
-function quizStart(){
-    
-    // startTime.style.display="none";
-    // quiz.style.display="block";
-    showCurrentQuestion();
-    quizTimer();
-}
-
 function showCurrentQuestion() {
     var question = currentQuestion[currentQuestionIndex]
 
-    question.textContext = question.quizQuestion
+    quizQuestion.textContext = question.quizQuestion
     answerA.textContext = question.answerA
     answerB.textContext = question.answerB
     answerC.textContext = question.answerC
     answerD.textContext = question.answerD
 
+}
+
+
+
+startBtn.addEventListener("click", quizStart());
+
+function quizStart(){
+    startBtn.style.display="none";
+    quiz.style.display="block";
+    showCurrentQuestion();
+    quizTimer();
 }
 
 function quizTimer(){;
@@ -78,31 +77,31 @@ function quizTimer(){;
     }, 1000);
 }
 
-// function checkAnswer(answer) {
-//     if (answer === question[currentQuestionIndex].correct){
-//       correctDisplay.style.display="block";
-//     }
-//       setTimeout(function () {
-//         correctDisplay.style.display='none';
-//       }, 1000)
+function clickAnswer(answer) {
+    if (answer === question[currentQuestionIndex].correct){
+      correctDisplay.style.display="block";
+    }
+      setTimeout(function () {
+        correctDisplay.style.display='none';
+      }, 1000)
     
-//       else{
-//         incorrectDisplay.style.display="block";
-//         setTimeout(function (){
-//           incorrectDisplay.style.display='none';
-//         }, 1000);
-//         timeLeft -=10
-//         }
+      else{
+        incorrectDisplay.style.display="block";
+        setTimeout(function (){
+          incorrectDisplay.style.display='none';
+        }, 1000);
+        timeLeft -=10
+        }
       
-//       if(currentQI < lastQI) {
-//         currentQI++;
-//         showCurrentQuestion();
-//       }
+      if(currentQI < lastQI) {
+        currentQuestionIndex++;
+        showCurrentQuestion();
+      }
 
-//       else {
-//         yourScore();
-//       }
-//     }
+      else {
+        yourScore();
+      }
+    }
 
 function yourScore(){
     clearInterval(timerInterval);
