@@ -77,31 +77,31 @@ function quizTimer(){;
     }, 1000);
 }
 
-function clickAnswer(answer) {
-    if (answer === question[currentQuestionIndex].correct){
-      correctDisplay.style.display="block";
-    }
-      setTimeout(function () {
-        correctDisplay.style.display='none';
-      }, 1000)
-    
-      else{
-        incorrectDisplay.style.display="block";
-        setTimeout(function (){
-          incorrectDisplay.style.display='none';
-        }, 1000);
-        timeLeft -=10
+
+    function clickAnswer(answer) {
+        if (answer === questions[currentQuestionIndex].correct){
+          correctDisplay.style.display="block";
+          setTimeout(function () {
+            correctDisplay.style.display='none';
+          }, 1000);
+        }
+        else {
+          incorrectDisplay.style.display="block";
+          setTimeout(function () {
+            noBar.style.display='none';
+          }, 1000);
+          timeLeft -=10
+        }
+        if(currentQuestionIndex < lastQuestionIndex) {
+          currentQuestionIndex++;
+          showCurrentQuestion();
+        }
+        else {
+          yourScore();
         }
       
-      if(currentQI < lastQI) {
-        currentQuestionIndex++;
-        showCurrentQuestion();
       }
 
-      else {
-        yourScore();
-      }
-    }
 
 function yourScore(){
     clearInterval(timerInterval);
