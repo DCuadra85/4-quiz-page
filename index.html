@@ -16,10 +16,10 @@
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-            <div id="startPage">
+            <div id="start">
                 <h1>Timed Quiz</h1>
                 <p>Lets see what you know about games.</p>
-                <button type="button" class="btn btn-primary btnSpace" id=btnStart onclick=quizStart()>Click to Start</button>
+                <button type="button" class="btn btn-primary btnSpace" id=start onclick= "startQuiz()">Click to Start</button>
             </div>
 
                 <!-- consider putting grid system or buttons for selections and hook JS into it -->
@@ -53,8 +53,8 @@
                 <h3 style="margin-bottom: 50px;" id="endingScore"></h3>                      
                     <div class="scores">
                         <form id="score-form" method="POST">
-                          <label for="score-text"><h4>Enter Initials:</h4></label>
-                          <input type="text" placeholder="ex. AE" name="score-text" id="score-text" />
+                          <label for="scoretext"><h4>Enter Initials:</h4></label>
+                          <input type="text" placeholder="ex. AE" name="scoretext" id="scoretext" />
                           <button type="button" class="btn btn-primary mb-2" onclick="yourScore()">Submit</button>
                         </form>
                       </div>
@@ -63,10 +63,10 @@
 
 
             <div id="highScore" style="display:none;">
-                <h1>High Score:</h1>
+                <h1>High Scores:</h1>
                 <ul id="score-list"></ul>
-                <button type="submit" class="btn btn-primary mr-2" onclick="restartQuiz()">Try Again</button>
-                <button type="submit" class="btn btn-primary" onclick="clearScore()">Clear High Scores</button>
+                <button type="submit" class="btn btn-primary mr-2" onclick="restartQuiz()">Play Again</button>
+                <button type="submit" class="btn btn-primary" onclick="clearScores()">Clear High Scores</button>
             </div>
 
         </div>
@@ -79,8 +79,8 @@
                 <h1>Good Job!</h1>
                     <div class="scores">
                         <form id="score-record" method="POST">
-                            <label for="score-text">Enter Intiials: </label>
-                            <input type="text" placeholder="ex. AE" name="score-text" id="score-text" />
+                            <label for="scoretext">Enter Intiials: </label>
+                            <input type="text" placeholder="ex. AE" name="scoretext" id="scoretext" />
                             <button type="button" class="btn btn-primary mb-2" onclick="yourScore()">Enter</button>
                         </form>
                     </div>
@@ -88,48 +88,6 @@
             </div>
 
 
-    <!-- <ul id="question1">
-        <li>
-            <button class= "correct answer">Option 1</button>
-            <button class= "wrong answer">Option 2</button>
-            <button class= "wrong answer">Option 3</button>
-            <button class= "wrong answer">Option 4</button>
-        </li>
-    </ul>
-
-    <ul id="question2">
-        <button class= "correct answer">Option 1</button>
-        <button class= "wrong answer">Option 2</button>
-        <button class= "wrong answer">Option 3</button>
-        <button class= "wrong answer">Option 4</button>
-    </ul>
-
-    <ul id="question3">
-        <button class= "correct answer">Option 1</button>
-        <button class= "wrong answer">Option 2</button>
-        <button class= "wrong answer">Option 3</button>
-        <button class= "wrong answer">Option 4</button>
-    </ul> 
-
-    DON'T HARD CODE THESE, use the start button and add the timer box to top right, and highscores link. 
-    Questions container.
-
-    Use questions container, answer === true use continue, answers === false they lose time use continue,
-     then empty view and load new question.
-
-    Timer needs to stop at 0. Timer can't go negative.
-
-    Before decrement to time remaining code, use a timer check: if i <= 0 is true, put them to high score screen
-
-    if timer ends before all answered entered, use alert and bring user back to highscore.
-
-    Use local storage for view of scores after user input. Use a submit button.
-    Attach event listener to the button to take the value from input field and save to localStorage.
-
-    Highscore page redirect retrieves local storage.
-
-
--->
 
     <style src=".script.js">    </style>
 
