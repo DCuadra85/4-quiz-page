@@ -2,13 +2,20 @@
 
 var highScoreElement = document.getElementById('#highScore');
 var startBtn = document.getElementById("#btnStart");
-var  
 
 var startTime = 90;
 var timerInterval = -1;
 
 var correctDisplay = document.getElementById("#correctBar")
 var incorrectDisplay = document.getElementById("#wrongBar")
+
+var answerA = document.getElementById("#btnA")
+var answerB = document.getElementById("#btnB")
+var answerC = document.getElementById("#btnC")
+var answerD = document.getElementById("#btnD")
+
+var currentQuestionIndex = 0;
+var lastQuestionIndex = questionList.length-1;
 
 //define quiz q/a
 var questionList = [
@@ -30,16 +37,22 @@ var questionList = [
     }
 ];
 
-var answerA = document.getElementById("#btnA")
-var answerB = document.getElementById("#btnB")
-var answerC = document.getElementById("#btnC")
-var answerD = document.getElementById("#btnD")
 
-var currentQuestionIndex = 0;
-var lastQuestionIndex = questionList.length-1;
 
 // quiz sequence
-function displayQuestion() {
+
+
+startBtn.addEventListener("click", quizStart());
+
+function quizStart(){
+    
+    // startTime.style.display="none";
+    // quiz.style.display="block";
+    showCurrentQuestion();
+    quizTimer();
+}
+
+function showCurrentQuestion() {
     var question = currentQuestion[currentQuestionIndex]
 
     question.textContext = question.quizQuestion
@@ -48,15 +61,6 @@ function displayQuestion() {
     answerC.textContext = question.answerC
     answerD.textContext = question.answerD
 
-}
-
-startBtn.addEventListener("click", quizStart());
-
-function quizStart(){
-    start.style.display="none";
-    quiz.style.display="block";
-    showQuestion();
-    quizTimer();
 }
 
 function quizTimer(){;
@@ -74,12 +78,31 @@ function quizTimer(){;
     }, 1000);
 }
 
-function checkAnswer(answer) {
-    if (answer === question[currentQuestionIndex].correct){
-      correct.style.display="block";
-      setTimeout(function () {
-        correct.style.display='none';
-      }, 1000);
+// function checkAnswer(answer) {
+//     if (answer === question[currentQuestionIndex].correct){
+//       correctDisplay.style.display="block";
+//     }
+//       setTimeout(function () {
+//         correctDisplay.style.display='none';
+//       }, 1000)
+    
+//       else{
+//         incorrectDisplay.style.display="block";
+//         setTimeout(function (){
+//           incorrectDisplay.style.display='none';
+//         }, 1000);
+//         timeLeft -=10
+//         }
+      
+//       if(currentQI < lastQI) {
+//         currentQI++;
+//         showCurrentQuestion();
+//       }
+
+//       else {
+//         yourScore();
+//       }
+//     }
 
 function yourScore(){
     clearInterval(timerInterval);
